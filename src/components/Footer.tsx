@@ -2,100 +2,59 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-card-bg border-t border-card-border mt-16">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center font-black text-xl text-black" style={{ background: 'linear-gradient(135deg, #f59e0b, #ef4444)' }}>
-                BZ
-              </div>
-              <h3 className="text-xl font-black gradient-text">BetZone IL</h3>
-            </div>
-            <p className="text-sm text-text-muted leading-relaxed">
-              המגזין המוביל בישראל להימורי ספורט. חדשות, סקירות, טיפים ותוצאות - הכל במקום אחד.
+    <footer className="bg-bg-dark text-gray-400 mt-12">
+      <div className="max-w-7xl mx-auto px-4 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 className="text-2xl font-black text-white mb-3 font-editorial">BetZone</h3>
+            <p className="text-sm leading-relaxed">
+              מגזין חדשות עצמאי המספק מידע, סקירות וניתוחים בתחום הימורי הספורט.
+              אנו לא מספקים שירותי הימורים.
             </p>
           </div>
-
-          {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-accent mb-4">ניווט מהיר</h4>
+            <h4 className="font-bold text-white mb-4 text-sm">מדורים</h4>
             <ul className="space-y-2">
               {[
                 { href: "/news", label: "חדשות" },
-                { href: "/agents", label: "סוכנים" },
-                { href: "/live-scores", label: "תוצאות לייב" },
+                { href: "/agents", label: "מדריך סוכנים" },
+                { href: "/live-scores", label: "תוצאות" },
                 { href: "/odds", label: "אודס" },
                 { href: "/poker", label: "פוקר וקזינו" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-text-muted hover:text-accent transition-colors">
-                    {link.label}
-                  </Link>
+                { href: "/community", label: "קהילה" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-sm hover:text-white transition-colors">{l.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Betting Agents */}
           <div>
-            <h4 className="font-bold text-accent mb-4">סוכני הימורים</h4>
-            <ul className="space-y-2">
-              {[
-                "Winner",
-                "Bet365",
-                "Stake",
-                "Pinnacle",
-                "1xBet",
-              ].map((agent) => (
-                <li key={agent}>
-                  <Link href="/agents" className="text-sm text-text-muted hover:text-accent transition-colors">
-                    {agent}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="font-bold text-white mb-4 text-sm">נושאים</h4>
+            <ul className="space-y-2 text-sm">
+              <li>ליגת העל</li><li>פרמייר ליג</li><li>ליגת האלופות</li>
+              <li>NBA</li><li>UFC / MMA</li><li>פוקר</li>
             </ul>
           </div>
-
-          {/* Sports */}
           <div>
-            <h4 className="font-bold text-accent mb-4">ספורט</h4>
-            <ul className="space-y-2">
-              {[
-                "כדורגל",
-                "כדורסל",
-                "טניס",
-                "MMA / UFC",
-                "פוקר",
-              ].map((sport) => (
-                <li key={sport}>
-                  <span className="text-sm text-text-muted">{sport}</span>
-                </li>
-              ))}
+            <h4 className="font-bold text-white mb-4 text-sm">אודות</h4>
+            <ul className="space-y-2 text-sm">
+              <li>אודותינו</li><li>צוות המערכת</li><li>צרו קשר</li>
+              <li>מדיניות פרטיות</li><li>תנאי שימוש</li>
             </ul>
           </div>
         </div>
-
-        {/* Disclaimer */}
-        <div className="mt-10 pt-8 border-t border-card-border">
-          <div className="bg-accent-red/10 border border-accent-red/30 rounded-lg p-4 mb-6">
-            <p className="text-xs text-accent-red font-medium text-center leading-relaxed">
-              אזהרה: הימורים עלולים לגרום להתמכרות. הימורים מיועדים לבני 18+ בלבד.
-              אתר זה מספק מידע בלבד ואינו מהווה שירותי הימורים.
-              הימרו באחריות. אם אתם מרגישים שאתם מפתחים התמכרות, פנו לקו החם 1-800-363-363.
+        <div className="border-t border-white/10 pt-6">
+          <div className="bg-white/5 rounded-sm p-4 mb-6">
+            <p className="text-xs text-gray-500 text-center leading-relaxed">
+              <strong className="text-gray-400">הבהרה:</strong> BetZone IL הוא מגזין חדשות ומידע בלבד.
+              האתר אינו מספק שירותי הימורים ואינו פלטפורמת הימורים.
+              הימורים מותרים לבני 18+ בלבד. קו סיוע: 1-800-363-363.
             </p>
           </div>
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-text-muted">
-              © 2026 BetZone IL. כל הזכויות שמורות. האתר מספק מידע בלבד.
-            </p>
-            <div className="flex items-center gap-4 text-xs text-text-muted">
-              <span>תנאי שימוש</span>
-              <span>מדיניות פרטיות</span>
-              <span>הימורים אחראיים</span>
-            </div>
-          </div>
+          <p className="text-xs text-gray-600 text-center">
+            © {new Date().getFullYear()} BetZone IL. מגזין חדשות עצמאי. כל הזכויות שמורות.
+          </p>
         </div>
       </div>
     </footer>

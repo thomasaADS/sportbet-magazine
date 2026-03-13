@@ -1,268 +1,235 @@
 import type { Metadata } from "next";
-import { bettingAgents, agentCategories } from "@/lib/agents-data";
+import { bettingAgents } from "@/lib/agents-data";
 import AgentContactForm from "@/components/AgentContactForm";
 
 export const metadata: Metadata = {
-  title: "סוכני הימורים מומלצים - BetZone IL | השוואת סוכנים 2026",
+  title: "מדריך סוכנים מורשים | BetZone IL - סקירות ומידע",
   description:
-    "השוואת סוכני הימורי ספורט מומלצים בישראל ובעולם. Bet365, Winner, Stake, Pinnacle ועוד. אודס, בונוסים, סקירות מקיפות וקישורי הרשמה.",
-  keywords: [
-    "סוכני הימורים",
-    "bet365",
-    "winner",
-    "stake",
-    "pinnacle",
-    "הימורי ספורט",
-    "בונוסים",
-    "הרשמה",
-  ],
+    "מדריך מקיף של סוכני הימורי ספורט - סקירות, דירוגים, סטטוס רישוי ומידע. Winner, Bet365, Pinnacle, Stake ועוד. מידע בלבד, לא הימורים.",
+  keywords: ["סוכני הימורים", "מדריך סוכנים", "winner", "bet365", "סקירות"],
 };
 
 export default function AgentsPage() {
+  const legalAgents = bettingAgents.filter((a) => a.category === "legal");
+  const internationalAgents = bettingAgents.filter((a) => a.category === "international");
+  const cryptoAgents = bettingAgents.filter((a) => a.category === "crypto");
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Page Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-black mb-3">
-          <span className="gradient-text">סוכני הימורים מומלצים</span>
-        </h1>
-        <p className="text-text-muted max-w-2xl mx-auto">
-          השוואה מקיפה של סוכני ההימורים המובילים - אודס, בונוסים, תכונות, יתרונות וחסרונות.
-          בחרו את הסוכן המתאים לכם.
-        </p>
+      <div className="mb-8">
+        <hr className="rule-thick mb-4" />
+        <div className="flex items-start justify-between flex-wrap gap-4">
+          <div>
+            <h1 className="headline-hero mb-2">מדריך סוכנים</h1>
+            <p className="text-ink-muted text-sm max-w-xl leading-relaxed">
+              מדריך מקיף של פלטפורמות הימורי הספורט המרכזיות. המידע נועד לסקירה
+              ולידיעה בלבד - אנו לא מספקים שירותי הימורים ולא ממליצים על הימורים.
+            </p>
+          </div>
+          <div className="bg-bg-section border border-border rounded-sm p-4 max-w-xs">
+            <p className="text-xs text-ink-muted leading-relaxed">
+              <strong className="text-ink">שימו לב:</strong> בישראל, הפלטפורמה
+              היחידה המורשית חוקית להימורי ספורט היא Winner.co.il של המועצה להסדר
+              ההימורים בספורט.
+            </p>
+          </div>
+        </div>
+        <hr className="rule-thin mt-6" />
       </div>
 
-      {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-3 mb-8">
-        {Object.entries(agentCategories).map(([key, cat]) => (
-          <span
-            key={key}
-            className="px-4 py-2 rounded-full text-sm font-bold border"
-            style={{
-              borderColor: cat.color,
-              color: cat.color,
-              backgroundColor: `${cat.color}15`,
-            }}
-          >
-            {cat.label}
-          </span>
-        ))}
-      </div>
+      {/* === LICENSED IN ISRAEL === */}
+      {legalAgents.length > 0 && (
+        <section className="mb-12">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="section-flag bg-green text-white">מורשה בישראל</span>
+            <hr className="rule-thin flex-1" />
+          </div>
+          {legalAgents.map((agent) => (
+            <AgentCard key={agent.id} agent={agent} />
+          ))}
+        </section>
+      )}
 
-      {/* Agents Grid */}
-      <div className="space-y-8">
-        {bettingAgents.map((agent) => (
-          <div
-            key={agent.id}
-            id={agent.id}
-            className="rounded-2xl bg-card-bg border border-card-border overflow-hidden card-hover"
-          >
-            {/* Agent Header */}
-            <div className="p-6 md:p-8 border-b border-card-border">
-              <div className="flex flex-col md:flex-row md:items-center gap-6">
-                <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center font-black text-2xl text-white flex-shrink-0"
-                  style={{
-                    background: "linear-gradient(135deg, #f59e0b, #ef4444)",
-                  }}
-                >
-                  {agent.logo}
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-1">
-                    <h2 className="text-2xl font-black">{agent.nameHe}</h2>
-                    <span className="text-lg text-text-muted">
-                      ({agent.name})
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex items-center gap-1">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <span
-                          key={i}
-                          className={`text-lg ${
-                            i < Math.floor(agent.rating)
-                              ? "text-accent"
-                              : "text-card-border"
-                          }`}
-                        >
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                    <span className="text-accent font-bold text-lg">
-                      {agent.rating}
-                    </span>
-                    <span
-                      className="px-3 py-1 rounded-full text-xs font-bold mr-2"
-                      style={{
-                        backgroundColor:
-                          agentCategories[agent.category]?.color + "20",
-                        color: agentCategories[agent.category]?.color,
-                      }}
-                    >
-                      {agentCategories[agent.category]?.label}
-                    </span>
-                  </div>
-                  <p className="text-sm text-text-muted leading-relaxed">
-                    {agent.description}
-                  </p>
-                </div>
-                <div className="flex flex-col gap-3 flex-shrink-0">
-                  <a
-                    href={agent.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-3 rounded-lg text-center font-bold text-black transition-all hover:scale-105"
-                    style={{
-                      background: "linear-gradient(135deg, #f59e0b, #d97706)",
-                    }}
-                  >
-                    הירשם עכשיו
-                  </a>
-                  <a
-                    href={agent.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-3 rounded-lg text-center font-bold border border-card-border hover:border-accent transition-all"
-                  >
-                    בקר באתר
-                  </a>
-                </div>
-              </div>
+      {/* === INTERNATIONAL === */}
+      {internationalAgents.length > 0 && (
+        <section className="mb-12">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="section-flag bg-blue text-white">בינלאומי</span>
+            <hr className="rule-thin flex-1" />
+          </div>
+          <div className="space-y-6">
+            {internationalAgents.map((agent) => (
+              <AgentCard key={agent.id} agent={agent} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* === CRYPTO === */}
+      {cryptoAgents.length > 0 && (
+        <section className="mb-12">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="section-flag" style={{ background: "#6a1b9a" }}>קריפטו</span>
+            <hr className="rule-thin flex-1" />
+          </div>
+          <div className="space-y-6">
+            {cryptoAgents.map((agent) => (
+              <AgentCard key={agent.id} agent={agent} />
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  );
+}
+
+function AgentCard({ agent }: { agent: (typeof bettingAgents)[0] }) {
+  const statusBadge = agent.category === "legal" ? "badge-licensed"
+    : agent.category === "crypto" ? "badge-crypto"
+    : "badge-international";
+  const statusLabel = agent.category === "legal" ? "מורשה"
+    : agent.category === "crypto" ? "קריפטו"
+    : "בינלאומי";
+
+  return (
+    <div
+      id={agent.id}
+      className="bg-bg-paper border border-border rounded-sm overflow-hidden mb-6"
+    >
+      {/* Header */}
+      <div className="p-6 md:p-8 border-b border-border-light">
+        <div className="flex flex-col md:flex-row gap-6">
+          {/* Logo + basic info */}
+          <div className="flex items-start gap-4 flex-1">
+            <div className="w-16 h-16 rounded bg-bg-section flex items-center justify-center font-black text-xl text-ink-light border border-border flex-shrink-0">
+              {agent.logo}
             </div>
-
-            {/* Agent Details */}
-            <div className="p-6 md:p-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Bonus */}
-                <div
-                  className="p-4 rounded-xl"
-                  style={{
-                    background: "rgba(245, 158, 11, 0.08)",
-                    border: "1px solid rgba(245, 158, 11, 0.2)",
-                  }}
-                >
-                  <h4 className="text-accent font-bold mb-2">בונוס הצטרפות</h4>
-                  <p className="text-lg font-bold">{agent.bonus}</p>
-                </div>
-
-                {/* Min Deposit */}
-                <div className="p-4 rounded-xl bg-white/5 border border-card-border">
-                  <h4 className="text-accent-blue font-bold mb-2">
-                    הפקדה מינימלית
-                  </h4>
-                  <p className="text-lg font-bold">{agent.minDeposit}</p>
-                </div>
-
-                {/* License */}
-                <div className="p-4 rounded-xl bg-white/5 border border-card-border">
-                  <h4 className="text-accent-green font-bold mb-2">רישיון</h4>
-                  <p className="text-sm font-bold">{agent.license}</p>
-                </div>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 flex-wrap mb-1">
+                <h2 className="headline-primary">{agent.nameHe}</h2>
+                <span className="text-ink-muted text-sm">({agent.name})</span>
+                <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full ${statusBadge}`}>
+                  {statusLabel}
+                </span>
               </div>
-
-              {/* Features, Pros, Cons */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                <div>
-                  <h4 className="font-bold mb-3 text-accent">תכונות</h4>
-                  <div className="space-y-2">
-                    {agent.features.map((f, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-2 text-sm text-text-muted"
-                      >
-                        <span className="text-accent">◆</span>
-                        {f}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-bold mb-3 text-accent-green">יתרונות</h4>
-                  <div className="space-y-2">
-                    {agent.pros.map((p, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-2 text-sm text-text-muted"
-                      >
-                        <span className="text-accent-green">✓</span>
-                        {p}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-bold mb-3 text-accent-red">חסרונות</h4>
-                  <div className="space-y-2">
-                    {agent.cons.map((c, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-2 text-sm text-text-muted"
-                      >
-                        <span className="text-accent-red">✗</span>
-                        {c}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Sports & Payment */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div>
-                  <h4 className="font-bold mb-3">ספורט זמין</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {agent.sports.map((s, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 rounded-full text-xs bg-white/5 border border-card-border"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-bold mb-3">אמצעי תשלום</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {agent.paymentMethods.map((pm, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 rounded-full text-xs bg-white/5 border border-card-border"
-                      >
-                        {pm}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Legal Status */}
-              <div className="mt-6 p-4 rounded-xl" style={{
-                backgroundColor: agent.isAvailableInIsrael
-                  ? "rgba(16, 185, 129, 0.08)"
-                  : "rgba(239, 68, 68, 0.08)",
-                border: `1px solid ${agent.isAvailableInIsrael ? "rgba(16, 185, 129, 0.2)" : "rgba(239, 68, 68, 0.2)"}`,
-              }}>
-                <div className="flex items-center gap-2">
-                  <span className={agent.isAvailableInIsrael ? "text-accent-green" : "text-accent-red"}>
-                    {agent.isAvailableInIsrael ? "✓" : "⚠"}
+              {/* Rating */}
+              <div className="flex items-center gap-1 mb-3">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <span key={i} className={`text-sm ${i < Math.floor(agent.rating) ? "text-gold" : "text-border"}`}>
+                    ★
                   </span>
-                  <span className="font-bold text-sm">סטטוס בישראל:</span>
-                  <span className="text-sm text-text-muted">{agent.legalStatus}</span>
-                </div>
+                ))}
+                <span className="text-xs text-ink-muted mr-1">{agent.rating}/5</span>
               </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="p-6 md:p-8 border-t border-card-border">
-              <AgentContactForm agentName={agent.nameHe} agentId={agent.id} />
+              <p className="text-ink-light text-sm leading-relaxed">
+                {agent.description}
+              </p>
             </div>
           </div>
-        ))}
+
+          {/* Quick info boxes */}
+          <div className="flex flex-col gap-2 md:w-48 flex-shrink-0">
+            <div className="p-3 bg-bg-section rounded-sm border border-border-light">
+              <div className="text-[10px] text-ink-muted font-bold uppercase tracking-wider mb-0.5">הפקדה מינ׳</div>
+              <div className="text-sm font-bold">{agent.minDeposit}</div>
+            </div>
+            <div className="p-3 bg-bg-section rounded-sm border border-border-light">
+              <div className="text-[10px] text-ink-muted font-bold uppercase tracking-wider mb-0.5">רישיון</div>
+              <div className="text-xs font-bold">{agent.license}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Details grid */}
+      <div className="p-6 md:p-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Features */}
+          <div>
+            <h4 className="section-title mb-3">תכונות</h4>
+            <ul className="space-y-2">
+              {agent.features.map((f, i) => (
+                <li key={i} className="flex items-start gap-2 text-xs text-ink-light">
+                  <span className="text-gold mt-0.5">◆</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Pros */}
+          <div>
+            <h4 className="section-title mb-3 text-green">יתרונות</h4>
+            <ul className="space-y-2">
+              {agent.pros.map((p, i) => (
+                <li key={i} className="flex items-start gap-2 text-xs text-ink-light">
+                  <span className="text-green mt-0.5">✓</span>
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Cons */}
+          <div>
+            <h4 className="section-title mb-3 text-red">חסרונות</h4>
+            <ul className="space-y-2">
+              {agent.cons.map((c, i) => (
+                <li key={i} className="flex items-start gap-2 text-xs text-ink-light">
+                  <span className="text-red mt-0.5">✗</span>
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Tags row */}
+        <div className="mt-6 pt-6 border-t border-border-light">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <span className="text-[10px] font-bold text-ink-muted uppercase tracking-wider">ספורט</span>
+              <div className="flex flex-wrap gap-1.5 mt-2">
+                {agent.sports.map((s, i) => (
+                  <span key={i} className="px-2.5 py-1 text-[10px] bg-bg-section border border-border-light rounded-sm font-medium">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <span className="text-[10px] font-bold text-ink-muted uppercase tracking-wider">תשלום</span>
+              <div className="flex flex-wrap gap-1.5 mt-2">
+                {agent.paymentMethods.map((pm, i) => (
+                  <span key={i} className="px-2.5 py-1 text-[10px] bg-bg-section border border-border-light rounded-sm font-medium">
+                    {pm}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Legal status */}
+        <div className={`mt-6 p-4 rounded-sm border ${
+          agent.isAvailableInIsrael
+            ? "bg-green/5 border-green/20"
+            : "bg-red/5 border-red/20"
+        }`}>
+          <div className="flex items-center gap-2 text-sm">
+            <span className={agent.isAvailableInIsrael ? "text-green" : "text-red"}>
+              {agent.isAvailableInIsrael ? "✓" : "⚠"}
+            </span>
+            <strong>סטטוס בישראל:</strong>
+            <span className="text-ink-light">{agent.legalStatus}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact section */}
+      <div className="p-6 md:p-8 bg-bg-section border-t border-border-light">
+        <AgentContactForm agentName={agent.nameHe} agentId={agent.id} />
       </div>
     </div>
   );
