@@ -25,12 +25,12 @@ export const weeklySchedule: ScheduleEvent[] = [
 ];
 
 export const videoHighlights = [
-  { id: 1, title: "תקציר: מכבי ת\"א - הפועל ב\"ש 3-0", duration: "4:32", category: "ליגת העל", views: "12.4K" },
-  { id: 2, title: "כל השערים: ריאל מדריד - באיירן מינכן", duration: "6:15", category: "ליגת האלופות", views: "45.2K" },
-  { id: 3, title: "הייליטס NBA: לייקרס vs סלטיקס", duration: "8:44", category: "NBA", views: "23.1K" },
-  { id: 4, title: "ניתוח טקטי: ארסנל של ארטטה", duration: "12:20", category: "ניתוח", views: "8.7K" },
-  { id: 5, title: "UFC 320: קדימון מלא + ניתוח קרבות", duration: "15:03", category: "MMA", views: "18.9K" },
-  { id: 6, title: "שער העונה? מבט מקרוב על שער לאמין יאמאל", duration: "2:15", category: "כדורגל", views: "67.3K" },
+  { id: 1, title: "תקציר: מכבי ת\"א - הפועל ב\"ש 3-0", duration: "4:32", category: "ליגת העל", views: "12.4K", thumbnail: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" },
+  { id: 2, title: "כל השערים: ריאל מדריד - באיירן מינכן", duration: "6:15", category: "ליגת האלופות", views: "45.2K", thumbnail: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&q=80" },
+  { id: 3, title: "הייליטס NBA: לייקרס vs סלטיקס", duration: "8:44", category: "NBA", views: "23.1K", thumbnail: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" },
+  { id: 4, title: "ניתוח טקטי: ארסנל של ארטטה", duration: "12:20", category: "ניתוח", views: "8.7K", thumbnail: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80" },
+  { id: 5, title: "UFC 320: קדימון מלא + ניתוח קרבות", duration: "15:03", category: "MMA", views: "18.9K", thumbnail: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&q=80" },
+  { id: 6, title: "שער העונה? מבט מקרוב על שער לאמין יאמאל", duration: "2:15", category: "כדורגל", views: "67.3K", thumbnail: "https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=600&q=80" },
 ];
 
 export const trendingTopics = [
