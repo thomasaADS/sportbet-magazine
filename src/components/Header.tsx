@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const navItems = [
@@ -34,8 +35,9 @@ export default function Header() {
           </div>
 
           {/* Logo */}
-          <Link href="/" className="inline-block">
-            <div className="mb-1">
+          <Link href="/" className="inline-flex flex-col items-center gap-1">
+            <div className="flex items-center gap-3">
+              <Image src="/logo.svg" alt="BetZone" width={42} height={42} priority />
               <h1 className="text-5xl md:text-6xl font-black tracking-tight text-ink font-editorial">
                 BetZone
               </h1>

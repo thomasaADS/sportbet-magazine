@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,7 +7,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-black text-white mb-3 font-editorial">BetZone</h3>
+            <div className="flex items-center gap-2.5 mb-3">
+              <Image src="/logo.svg" alt="BetZone" width={32} height={32} />
+              <h3 className="text-2xl font-black text-white font-editorial">BetZone</h3>
+            </div>
             <p className="text-sm leading-relaxed">
               מגזין חדשות עצמאי המספק מידע, סקירות וניתוחים בתחום הימורי הספורט.
               אנו לא מספקים שירותי הימורים.

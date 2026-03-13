@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <path d="M24 2L6 10v14c0 11.1 7.7 21.4 18 24 10.3-2.6 18-12.9 18-24V10L24 2z" fill="#c8102e"/>
+  <path d="M24 5.5L9 12v11.5c0 9.6 6.5 18.5 15 20.8 8.5-2.3 15-11.2 15-20.8V12L24 5.5z" fill="#1a1412"/>
+  <text x="24" y="31" text-anchor="middle" font-family="Georgia, serif" font-weight="900" font-size="18" fill="white" letter-spacing="-1">BZ</text>
+  <rect x="14" y="34" width="20" height="2" rx="1" fill="#c8102e"/>
+</svg>
