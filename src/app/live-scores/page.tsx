@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LiveScoresBoard from "@/components/LiveScoresBoard";
 
 export const metadata: Metadata = {
-  title: "תוצאות ספורט לייב | BetZone IL",
+  title: "תוצאות ספורט לייב | הזירה",
   description: "תוצאות ספורט בזמן אמת - כדורגל, כדורסל, טניס ועוד. ליגת העל, פרמייר ליג, ליגת האלופות, NBA.",
 };
 

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import BreakingBar from "@/components/BreakingBar";
 
 export const metadata: Metadata = {
-  title: "BetZone IL | מגזין חדשות הימורי ספורט בישראל",
+  title: "הזירה | מגזין חדשות ספורט והימורים",
   description:
     "מגזין החדשות המוביל בישראל לעולם הימורי הספורט. סקירות סוכנים מורשים, חדשות ליגות, ניתוחי מומחים, פוקר, קזינו ועוד. מידע ותוכן - לא הימורים.",
   keywords: [
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
     "ניתוחי ספורט",
   ],
   openGraph: {
-    title: "BetZone IL | מגזין חדשות הימורי ספורט בישראל",
+    title: "הזירה | מגזין חדשות ספורט והימורים",
     description:
       "מגזין החדשות המוביל בישראל לעולם הימורי הספורט. סקירות, חדשות, ניתוחים ומידע.",
     type: "website",
     locale: "he_IL",
-    siteName: "BetZone IL",
+    siteName: "הזירה",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BetZone IL | מגזין חדשות הימורי ספורט",
+    title: "הזירה | מגזין חדשות ספורט והימורים",
     description: "חדשות, סקירות סוכנים, ניתוחי מומחים - הכל במקום אחד",
   },
   robots: { index: true, follow: true },

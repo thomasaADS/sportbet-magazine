@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: "https://betzone-il.vercel.app/sitemap.xml",
+    sitemap: "https://hazira.vercel.app/sitemap.xml",
   };
 }

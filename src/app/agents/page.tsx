@@ -3,7 +3,7 @@ import { bettingAgents } from "@/lib/agents-data";
 import AgentContactForm from "@/components/AgentContactForm";
 
 export const metadata: Metadata = {
-  title: "מדריך סוכנים מורשים | BetZone IL - סקירות ומידע",
+  title: "מדריך סוכנים מורשים | הזירה - סקירות ומידע",
   description:
     "מדריך מקיף של סוכני הימורי ספורט - סקירות, דירוגים, סטטוס רישוי ומידע. Winner, Bet365, Pinnacle, Stake ועוד. מידע בלבד, לא הימורים.",
   keywords: ["סוכני הימורים", "מדריך סוכנים", "winner", "bet365", "סקירות"],

@@ -1,7 +1,15 @@
 import type { MetadataRoute } from "next";
+import { newsArticles } from "@/lib/news-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://betzone-il.vercel.app";
+  const baseUrl = "https://hazira.vercel.app";
+
+  const articleUrls: MetadataRoute.Sitemap = newsArticles.map((article) => ({
+    url: `${baseUrl}/news/${article.id}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
 
   return [
     {
@@ -40,5 +48,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.7,
     },
+    ...articleUrls,
   ];
 }

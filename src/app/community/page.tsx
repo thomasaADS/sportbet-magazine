@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "קהילת BetZone IL | הצטרפו לקהילת הימורי הספורט",
-  description: "הצטרפו לקהילת BetZone IL - דיונים, ניתוחים, טיפים וחדשות מעולם הימורי הספורט. טלגרם, וואטסאפ וניוזלטר.",
+  title: "קהילת הזירה | הצטרפו לקהילת הימורי הספורט",
+  description: "הצטרפו לקהילת הזירה - דיונים, ניתוחים, טיפים וחדשות מעולם הימורי הספורט. טלגרם, וואטסאפ וניוזלטר.",
 };
 
 const discussions = [

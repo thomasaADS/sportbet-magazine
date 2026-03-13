@@ -32,7 +32,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
           {/* Main Feature - 7 cols */}
           <div className="lg:col-span-7 lg:border-l lg:border-border lg:pl-6">
-            <Link href={`/news#${featured.id}`} className="group block">
+            <Link href={`/news/${featured.id}`} className="group block">
               <div className="overflow-hidden rounded-sm mb-4">
                 <div
                   className="h-[320px] md:h-[400px] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
@@ -47,7 +47,7 @@ export default function HomePage() {
                 {featured.excerpt}
               </p>
               <div className="byline">
-                {featured.author || "מערכת BetZone"} • {featured.readTime} קריאה
+                {featured.author || "מערכת הזירה"} • {featured.readTime} קריאה
               </div>
             </Link>
           </div>
@@ -56,7 +56,7 @@ export default function HomePage() {
           <div className="lg:col-span-5 lg:pr-6 mt-6 lg:mt-0">
             {secondary.map((article, i) => (
               <div key={article.id}>
-                <Link href={`/news#${article.id}`} className="group block">
+                <Link href={`/news/${article.id}`} className="group block">
                   <div className="flex gap-4">
                     <div className="flex-1">
                       <div className="category-tag mb-1.5">{article.category}</div>
@@ -82,7 +82,7 @@ export default function HomePage() {
             {opinionArticle && (
               <>
                 <hr className="rule-thin my-5" />
-                <Link href={`/news#${opinionArticle.id}`} className="group block">
+                <Link href={`/news/${opinionArticle.id}`} className="group block">
                   <span className="section-flag-outline text-[9px] mb-2 inline-block">טור דעה</span>
                   <h3 className="headline-secondary mt-2 group-hover:text-red transition-colors">
                     {opinionArticle.title}
@@ -125,7 +125,7 @@ export default function HomePage() {
               key={article.id}
               className={`${i < 3 ? "lg:border-l lg:border-border lg:pl-5 lg:ml-5" : ""} ${i > 0 ? "mt-5 lg:mt-0" : ""}`}
             >
-              <Link href={`/news#${article.id}`} className="group block">
+              <Link href={`/news/${article.id}`} className="group block">
                 <div
                   className="h-36 bg-cover bg-center rounded-sm mb-3 transition-transform duration-500 group-hover:scale-[1.02]"
                   style={{ backgroundImage: `url(${article.image})` }}
@@ -166,7 +166,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-0">
               {worldFootball.slice(0, 4).map((article, i) => (
                 <div key={article.id}>
-                  <Link href={`/news#${article.id}`} className="group block py-4">
+                  <Link href={`/news/${article.id}`} className="group block py-4">
                     <div
                       className="h-40 bg-cover bg-center rounded-sm mb-3 transition-transform duration-500 group-hover:scale-[1.02]"
                       style={{ backgroundImage: `url(${article.image})` }}
@@ -206,7 +206,7 @@ export default function HomePage() {
           {moreNews.map((article, i) => (
             <div key={article.id}>
               <Link
-                href={`/news#${article.id}`}
+                href={`/news/${article.id}`}
                 className="group flex gap-4 py-4 hover:bg-bg-warm px-2 rounded-sm transition-colors"
               >
                 <div
@@ -307,7 +307,7 @@ export default function HomePage() {
               <div className="space-y-0">
                 {guides.slice(0, 3).map((guide, i) => (
                   <div key={guide.id}>
-                    <Link href={`/news#${guide.id}`} className="group block py-3">
+                    <Link href={`/news/${guide.id}`} className="group block py-3">
                       <h3 className="headline-small group-hover:text-red transition-colors mb-1">
                         {guide.title}
                       </h3>
@@ -355,7 +355,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-0">
           {bottomNews.map((article, i) => (
             <div key={article.id}>
-              <Link href={`/news#${article.id}`} className="group block py-4">
+              <Link href={`/news/${article.id}`} className="group block py-4">
                 <div
                   className="h-36 bg-cover bg-center rounded-sm mb-3 transition-transform duration-500 group-hover:scale-[1.02]"
                   style={{ backgroundImage: `url(${article.image})` }}
@@ -390,7 +390,7 @@ export default function HomePage() {
               הפלטפורמה החוקית היחידה היא Winner.co.il. השוק הבלתי מפוקח מוערך ב-3.5 מיליארד שקל בשנה.
             </p>
             <p className="text-xs text-ink-muted leading-relaxed">
-              BetZone IL מספק מידע וסקירות בלבד. אנו לא מספקים שירותי הימורים ולא ממליצים על הימורים.
+              הזירה מספק מידע וסקירות בלבד. אנו לא מספקים שירותי הימורים ולא ממליצים על הימורים.
               הימורים מותרים לבני 18+ בלבד.
             </p>
           </div>

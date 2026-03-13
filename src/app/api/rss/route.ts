@@ -18,7 +18,7 @@ export async function GET() {
       try {
         const res = await fetch(feed.url, {
           next: { revalidate: 1800 }, // 30 min cache
-          headers: { "User-Agent": "BetZone-IL-Magazine/1.0" },
+          headers: { "User-Agent": "HaZira-Magazine/1.0" },
         });
 
         if (!res.ok) continue;

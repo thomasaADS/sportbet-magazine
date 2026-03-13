@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import OddsBoard from "@/components/OddsBoard";
 
 export const metadata: Metadata = {
-  title: "אודס הימורי ספורט | BetZone IL - השוואת אודס",
+  title: "אודס הימורי ספורט | הזירה - השוואת אודס",
   description: "השוואת אודס מסוכנים מובילים. מצאו את האודס הטובים ביותר לכדורגל, כדורסל, טניס ועוד.",
 };
 

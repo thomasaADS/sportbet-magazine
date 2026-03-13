@@ -37,15 +37,15 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="inline-flex flex-col items-center gap-1">
             <div className="flex items-center gap-3">
-              <Image src="/logo.svg" alt="BetZone" width={42} height={42} priority />
+              <Image src="/logo.svg" alt="הזירה" width={42} height={42} priority />
               <h1 className="text-5xl md:text-6xl font-black tracking-tight text-ink font-editorial">
-                BetZone
+                הזירה
               </h1>
             </div>
             <div className="flex items-center justify-center gap-3">
               <span className="block h-px bg-ink-faint flex-1 max-w-[60px]" />
               <span className="text-[10px] text-ink-muted tracking-[0.35em] font-semibold uppercase">
-                מגזין חדשות הימורי ספורט
+                מגזין חדשות ספורט והימורים
               </span>
               <span className="block h-px bg-ink-faint flex-1 max-w-[60px]" />
             </div>

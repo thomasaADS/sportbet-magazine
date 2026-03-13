@@ -3,7 +3,7 @@ import Link from "next/link";
 import { newsArticles, newsCategories } from "@/lib/news-data";
 
 export const metadata: Metadata = {
-  title: "חדשות הימורי ספורט | BetZone IL - עדכונים שוטפים",
+  title: "חדשות הימורי ספורט | הזירה - עדכונים שוטפים",
   description: "חדשות הימורי ספורט מישראל ומהעולם. כדורגל, כדורסל, טניס, פוקר, MMA ועוד. ניתוחים, תחזיות וסקירות.",
 };
 
@@ -38,7 +38,7 @@ export default function NewsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 mb-8">
         {/* Main */}
         <div className="lg:col-span-8 lg:border-l lg:border-border lg:pl-6">
-          <Link href={`#${topStory.id}`} className="group block">
+          <Link href={`/news/${topStory.id}`} className="group block">
             <div className="overflow-hidden rounded-sm mb-4">
               <div
                 className="h-[320px] md:h-[400px] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
@@ -48,7 +48,7 @@ export default function NewsPage() {
             <div className="category-tag mb-2">{topStory.category}</div>
             <h2 className="headline-hero mb-3 group-hover:text-red transition-colors">{topStory.title}</h2>
             <p className="text-ink-light text-base leading-relaxed mb-3">{topStory.excerpt}</p>
-            <div className="byline">מערכת BetZone • {topStory.date} • {topStory.readTime} קריאה</div>
+            <div className="byline">מערכת הזירה • {topStory.date} • {topStory.readTime} קריאה</div>
           </Link>
         </div>
 
@@ -56,7 +56,7 @@ export default function NewsPage() {
         <div className="lg:col-span-4 lg:pr-6 mt-6 lg:mt-0">
           {secondaryStories.map((article, i) => (
             <div key={article.id}>
-              <div className="group cursor-pointer" id={article.id}>
+              <Link href={`/news/${article.id}`} className="group block" id={article.id}>
                 <div
                   className="h-36 bg-cover bg-center rounded-sm mb-3"
                   style={{ backgroundImage: `url(${article.image})` }}
@@ -65,7 +65,7 @@ export default function NewsPage() {
                 <h3 className="headline-secondary group-hover:text-red transition-colors mb-1.5">{article.title}</h3>
                 <p className="text-ink-muted text-xs line-clamp-2 mb-1.5">{article.excerpt}</p>
                 <div className="byline">{article.date} • {article.readTime} קריאה</div>
-              </div>
+              </Link>
               {i < secondaryStories.length - 1 && <hr className="rule-thin my-4" />}
             </div>
           ))}
@@ -82,7 +82,7 @@ export default function NewsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-0">
         {restStories.map((article, i) => (
           <div key={article.id}>
-            <div className="py-4 group cursor-pointer" id={article.id}>
+            <Link href={`/news/${article.id}`} className="py-4 group block" id={article.id}>
               <div
                 className="h-44 bg-cover bg-center rounded-sm mb-3 transition-transform duration-500 group-hover:scale-[1.02]"
                 style={{ backgroundImage: `url(${article.image})` }}
@@ -93,7 +93,7 @@ export default function NewsPage() {
               </h3>
               <p className="text-ink-muted text-xs line-clamp-2 mb-2">{article.excerpt}</p>
               <div className="byline">{article.date} • {article.readTime} קריאה</div>
-            </div>
+            </Link>
             {i < restStories.length - 1 && <hr className="rule-thin lg:hidden" />}
           </div>
         ))}

@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2.5 mb-3">
-              <Image src="/logo.svg" alt="BetZone" width={32} height={32} />
-              <h3 className="text-2xl font-black text-white font-editorial">BetZone</h3>
+              <Image src="/logo.svg" alt="הזירה" width={32} height={32} />
+              <h3 className="text-2xl font-black text-white font-editorial">הזירה</h3>
             </div>
             <p className="text-sm leading-relaxed">
               מגזין חדשות עצמאי המספק מידע, סקירות וניתוחים בתחום הימורי הספורט.
@@ -51,13 +51,13 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-6">
           <div className="bg-white/5 rounded-sm p-4 mb-6">
             <p className="text-xs text-gray-500 text-center leading-relaxed">
-              <strong className="text-gray-400">הבהרה:</strong> BetZone IL הוא מגזין חדשות ומידע בלבד.
+              <strong className="text-gray-400">הבהרה:</strong> הזירה הוא מגזין חדשות ומידע בלבד.
               האתר אינו מספק שירותי הימורים ואינו פלטפורמת הימורים.
               הימורים מותרים לבני 18+ בלבד. קו סיוע: 1-800-363-363.
             </p>
           </div>
           <p className="text-xs text-gray-600 text-center">
-            © {new Date().getFullYear()} BetZone IL. מגזין חדשות עצמאי. כל הזכויות שמורות.
+            © {new Date().getFullYear()} הזירה. מגזין חדשות עצמאי. כל הזכויות שמורות.
           </p>
         </div>
       </div>

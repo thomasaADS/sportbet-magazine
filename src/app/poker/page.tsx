@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PokerContent from "@/components/PokerContent";
 
 export const metadata: Metadata = {
-  title: "פוקר וקזינו | BetZone IL - טורנירים, שחקנים וחדשות",
+  title: "פוקר וקזינו | הזירה - טורנירים, שחקנים וחדשות",
   description: "חדשות פוקר וקזינו - WSOP, טורנירים, שחקנים מובילים, בלוקצ'יין ועוד. מידע וסקירות.",
 };
 
