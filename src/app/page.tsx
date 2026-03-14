@@ -327,14 +327,14 @@ export default function HomePage() {
                 הצטרפו לאלפי חברי קהילה. ניתוחים, דיונים וטיפים ישירות מהמומחים.
               </p>
               <div className="space-y-2">
-                <a href="#" className="flex items-center gap-2.5 p-2.5 bg-bg-section rounded-sm hover:bg-bg-warm transition-colors">
+                <Link href="/community" className="flex items-center gap-2.5 p-2.5 bg-bg-section rounded-sm hover:bg-bg-warm transition-colors">
                   <div className="w-7 h-7 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">T</div>
                   <div className="text-xs"><strong>טלגרם</strong> • 4.2K חברים</div>
-                </a>
-                <a href="#" className="flex items-center gap-2.5 p-2.5 bg-bg-section rounded-sm hover:bg-bg-warm transition-colors">
+                </Link>
+                <Link href="/community" className="flex items-center gap-2.5 p-2.5 bg-bg-section rounded-sm hover:bg-bg-warm transition-colors">
                   <div className="w-7 h-7 rounded-full bg-green text-white flex items-center justify-center text-[10px] font-bold">W</div>
                   <div className="text-xs"><strong>וואטסאפ</strong> • 1.8K חברים</div>
-                </a>
+                </Link>
               </div>
               <Link href="/community" className="block mt-3 text-center py-2 border border-ink text-ink font-bold text-xs hover:bg-ink hover:text-bg-paper transition-colors rounded-sm">
                 הצטרפו לקהילה

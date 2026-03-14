@@ -13,7 +13,6 @@ export default function AgentContactForm({ agentName, agentId }: AgentContactFor
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Contact form:", { agentId, ...formData });
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
     setFormData({ name: "", email: "", message: "" });

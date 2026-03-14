@@ -81,30 +81,30 @@ export default function CommunityPage() {
           </div>
 
           <div className="space-y-3 mb-8">
-            <a href="#" className="flex items-center gap-3 p-4 bg-bg-paper border border-border rounded-sm hover:border-ink transition-colors">
+            <div className="flex items-center gap-3 p-4 bg-bg-paper border border-border rounded-sm">
               <div className="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-black text-sm">T</div>
               <div className="flex-1">
                 <div className="text-sm font-bold">ערוץ טלגרם</div>
                 <div className="text-[10px] text-ink-muted">4,200+ חברים • חדשות בזמן אמת</div>
               </div>
-              <span className="text-xs font-bold text-blue">הצטרפות</span>
-            </a>
-            <a href="#" className="flex items-center gap-3 p-4 bg-bg-paper border border-border rounded-sm hover:border-ink transition-colors">
+              <span className="text-[10px] font-bold text-ink-faint bg-bg-section px-2 py-1 rounded-sm">בקרוב</span>
+            </div>
+            <div className="flex items-center gap-3 p-4 bg-bg-paper border border-border rounded-sm">
               <div className="w-10 h-10 rounded-full bg-green text-white flex items-center justify-center font-black text-sm">W</div>
               <div className="flex-1">
                 <div className="text-sm font-bold">קבוצת וואטסאפ</div>
                 <div className="text-[10px] text-ink-muted">1,800+ חברים • דיונים וניתוחים</div>
               </div>
-              <span className="text-xs font-bold text-green">הצטרפות</span>
-            </a>
-            <a href="#" className="flex items-center gap-3 p-4 bg-bg-paper border border-border rounded-sm hover:border-ink transition-colors">
+              <span className="text-[10px] font-bold text-ink-faint bg-bg-section px-2 py-1 rounded-sm">בקרוב</span>
+            </div>
+            <div className="flex items-center gap-3 p-4 bg-bg-paper border border-border rounded-sm">
               <div className="w-10 h-10 rounded-full bg-red text-white flex items-center justify-center font-black text-sm">N</div>
               <div className="flex-1">
                 <div className="text-sm font-bold">ניוזלטר שבועי</div>
                 <div className="text-[10px] text-ink-muted">סיכום שבועי + תחזיות</div>
               </div>
-              <span className="text-xs font-bold text-red">הרשמה</span>
-            </a>
+              <span className="text-[10px] font-bold text-ink-faint bg-bg-section px-2 py-1 rounded-sm">בקרוב</span>
+            </div>
           </div>
 
           {/* Team / Experts */}

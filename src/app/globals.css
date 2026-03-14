@@ -149,7 +149,7 @@ body {
   height: 8px;
   border-radius: 50%;
   display: inline-block;
-  margin-left: 6px;
+  margin-inline-start: 6px;
 }
 
 /* --- BREAKING BAR --- */
@@ -182,7 +182,7 @@ body {
   background: var(--red);
   display: inline-block;
   animation: pulse-live 1.2s ease-in-out infinite;
-  margin-left: 4px;
+  margin-inline-start: 4px;
 }
 
 /* --- PULL QUOTE --- */
@@ -193,8 +193,8 @@ body {
   font-style: italic;
   line-height: 1.5;
   color: var(--ink-light);
-  border-right: 4px solid var(--red);
-  padding-right: 1.25rem;
+  border-inline-start: 4px solid var(--red);
+  padding-inline-start: 1.25rem;
 }
 
 /* --- BYLINE --- */

@@ -36,15 +36,22 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white mb-4 text-sm">נושאים</h4>
             <ul className="space-y-2 text-sm">
-              <li>ליגת העל</li><li>פרמייר ליג</li><li>ליגת האלופות</li>
-              <li>NBA</li><li>UFC / MMA</li><li>פוקר</li>
+              <li><Link href="/news" className="hover:text-white transition-colors">ליגת העל</Link></li>
+              <li><Link href="/news" className="hover:text-white transition-colors">פרמייר ליג</Link></li>
+              <li><Link href="/news" className="hover:text-white transition-colors">ליגת האלופות</Link></li>
+              <li><Link href="/news" className="hover:text-white transition-colors">NBA</Link></li>
+              <li><Link href="/news" className="hover:text-white transition-colors">UFC / MMA</Link></li>
+              <li><Link href="/poker" className="hover:text-white transition-colors">פוקר</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="font-bold text-white mb-4 text-sm">אודות</h4>
             <ul className="space-y-2 text-sm">
-              <li>אודותינו</li><li>צוות המערכת</li><li>צרו קשר</li>
-              <li>מדיניות פרטיות</li><li>תנאי שימוש</li>
+              <li><Link href="/community" className="hover:text-white transition-colors">אודותינו</Link></li>
+              <li><Link href="/community" className="hover:text-white transition-colors">צוות המערכת</Link></li>
+              <li><Link href="/community" className="hover:text-white transition-colors">צרו קשר</Link></li>
+              <li><Link href="/agents" className="hover:text-white transition-colors">מדיניות פרטיות</Link></li>
+              <li><Link href="/agents" className="hover:text-white transition-colors">תנאי שימוש</Link></li>
             </ul>
           </div>
         </div>
