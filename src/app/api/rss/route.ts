@@ -8,6 +8,11 @@ const RSS_FEEDS = [
     url: "https://www.ynet.co.il/Integration/StoryRss3.xml",
     category: "ספורט",
   },
+  {
+    name: "Maariv Sport",
+    url: "https://www.maariv.co.il/Rss/RssFeedsSport",
+    category: "ספורט",
+  },
 ];
 
 export async function GET() {

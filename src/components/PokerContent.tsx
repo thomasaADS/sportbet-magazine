@@ -2,13 +2,13 @@
 
 const topPlayers = [
   { rank: 1, name: "Justin Bonomo", country: "USA", earnings: "$62.4M", specialty: "High Roller" },
-  { rank: 2, name: "Daniel Negreanu", country: "Canada", earnings: "$49.8M", specialty: "WSOP" },
-  { rank: 3, name: "Bryn Kenney", country: "USA", earnings: "$57.2M", specialty: "Super High Roller" },
-  { rank: 4, name: "Erik Seidel", country: "USA", earnings: "$40.5M", specialty: "Mixed Games" },
-  { rank: 5, name: "David Peters", country: "USA", earnings: "$43.1M", specialty: "High Roller" },
-  { rank: 6, name: "Phil Ivey", country: "USA", earnings: "$32.7M", specialty: "Cash Games" },
-  { rank: 7, name: "Dan Smith", country: "USA", earnings: "$40.2M", specialty: "High Roller" },
-  { rank: 8, name: "Stephen Chidwick", country: "UK", earnings: "$38.9M", specialty: "High Roller" },
+  { rank: 2, name: "Bryn Kenney", country: "USA", earnings: "$57.2M", specialty: "Super High Roller" },
+  { rank: 3, name: "Daniel Negreanu", country: "Canada", earnings: "$49.8M", specialty: "WSOP" },
+  { rank: 4, name: "David Peters", country: "USA", earnings: "$43.1M", specialty: "High Roller" },
+  { rank: 5, name: "Erik Seidel", country: "USA", earnings: "$40.5M", specialty: "Mixed Games" },
+  { rank: 6, name: "Dan Smith", country: "USA", earnings: "$40.2M", specialty: "High Roller" },
+  { rank: 7, name: "Stephen Chidwick", country: "UK", earnings: "$38.9M", specialty: "High Roller" },
+  { rank: 8, name: "Phil Ivey", country: "USA", earnings: "$32.7M", specialty: "Cash Games" },
 ];
 
 const upcomingTournaments = [

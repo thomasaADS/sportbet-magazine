@@ -252,7 +252,7 @@ export const bettingAgents: BettingAgent[] = [
     sports: ["כדורגל", "כדורסל", "טניס", "MMA/UFC", "אי-ספורט", "קריקט", "רוגבי", "כדורעף"],
     minDeposit: "0.001 BTC",
     paymentMethods: ["Bitcoin", "Ethereum", "USDT", "USDC", "Litecoin", "Dogecoin", "Bitcoin Cash", "DAI"],
-    license: "Curacao eGaming License, Montenegro Gambling Authority",
+    license: "Curacao eGaming License",
     website: "https://www.cloudbet.com",
     isAvailableInIsrael: false,
     legalStatus: "בדקו זמינות עדכנית",
