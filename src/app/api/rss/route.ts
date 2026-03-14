@@ -13,6 +13,11 @@ const RSS_FEEDS = [
     url: "https://www.maariv.co.il/Rss/RssFeedsSport",
     category: "ספורט",
   },
+  {
+    name: "ONE",
+    url: "https://www.one.co.il/rss",
+    category: "ספורט",
+  },
 ];
 
 export async function GET() {
