@@ -193,7 +193,7 @@ export const newsArticles: NewsArticle[] = [
     categoryColor: "#1a365d",
     date: "13 מרץ 2026",
     readTime: "8 דקות",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     author: "אלון כהן",
     type: "opinion",
     content: [
@@ -231,7 +231,7 @@ export const newsArticles: NewsArticle[] = [
     categoryColor: "#b8860b",
     date: "11 מרץ 2026",
     readTime: "10 דקות",
-    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&q=80",
     author: "מערכת הזירה",
     type: "guide",
     content: [
@@ -396,7 +396,7 @@ export const newsArticles: NewsArticle[] = [
     categoryColor: "#c8102e",
     date: "6 מרץ 2026",
     readTime: "6 דקות",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&q=80",
     author: "מערכת הזירה",
     type: "news",
     content: [
@@ -415,7 +415,7 @@ export const newsArticles: NewsArticle[] = [
     categoryColor: "#16a34a",
     date: "5 מרץ 2026",
     readTime: "4 דקות",
-    image: "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800&q=80",
     author: "מערכת הזירה",
     type: "news",
     content: [
