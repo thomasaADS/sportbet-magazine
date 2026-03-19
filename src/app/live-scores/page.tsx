@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import LiveScoresBoard from "@/components/LiveScoresBoard";
 
 export const metadata: Metadata = {
-  title: "תוצאות ספורט לייב | הזירה",
+  title: "תוצאות ספורט לייב",
   description: "תוצאות ספורט בזמן אמת - כדורגל, כדורסל, טניס ועוד. ליגת העל, פרמייר ליג, ליגת האלופות, NBA.",
+  openGraph: {
+    title: "תוצאות ספורט לייב | הזירה",
+    description: "תוצאות ספורט בזמן אמת - ליגת העל, פרמייר ליג, ליגת האלופות, NBA",
+    type: "website",
+    locale: "he_IL",
+  },
 };
 
 export default function LiveScoresPage() {

@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import PokerContent from "@/components/PokerContent";
 
 export const metadata: Metadata = {
-  title: "פוקר וקזינו | הזירה - טורנירים, שחקנים וחדשות",
+  title: "פוקר וקזינו - טורנירים, שחקנים וחדשות",
   description: "חדשות פוקר וקזינו - WSOP, טורנירים, שחקנים מובילים, בלוקצ'יין ועוד. מידע וסקירות.",
+  openGraph: {
+    title: "פוקר וקזינו | הזירה",
+    description: "חדשות פוקר וקזינו - WSOP, טורנירים, שחקנים מובילים",
+    type: "website",
+    locale: "he_IL",
+  },
 };
 
 export default function PokerPage() {

@@ -5,7 +5,11 @@ import Footer from "@/components/Footer";
 import BreakingBar from "@/components/BreakingBar";
 
 export const metadata: Metadata = {
-  title: "הזירה | מגזין חדשות ספורט והימורים",
+  metadataBase: new URL("https://hazira.vercel.app"),
+  title: {
+    default: "הזירה | מגזין חדשות ספורט והימורים",
+    template: "%s | הזירה",
+  },
   description:
     "מגזין החדשות המוביל בישראל לעולם הימורי הספורט. סקירות סוכנים מורשים, חדשות ליגות, ניתוחי מומחים, פוקר, קזינו ועוד. מידע ותוכן - לא הימורים.",
   keywords: [
@@ -21,6 +25,9 @@ export const metadata: Metadata = {
     "Winner",
     "Bet365",
     "ניתוחי ספורט",
+    "סוכן הימורים",
+    "טיפים ספורט",
+    "תוצאות ספורט",
   ],
   openGraph: {
     title: "הזירה | מגזין חדשות ספורט והימורים",
@@ -29,6 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "he_IL",
     siteName: "הזירה",
+    url: "https://hazira.vercel.app",
   },
   twitter: {
     card: "summary_large_image",
@@ -36,6 +44,9 @@ export const metadata: Metadata = {
     description: "חדשות, סקירות סוכנים, ניתוחי מומחים - הכל במקום אחד",
   },
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: "https://hazira.vercel.app",
+  },
 };
 
 export default function RootLayout({
@@ -51,6 +62,34 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700;900&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "הזירה",
+              alternateName: "HaZira Sports Magazine",
+              url: "https://hazira.vercel.app",
+              description: "מגזין חדשות ספורט והימורים מוביל בישראל",
+              inLanguage: "he-IL",
+              publisher: {
+                "@type": "Organization",
+                name: "הזירה",
+                url: "https://hazira.vercel.app",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://hazira.vercel.app/logo.svg",
+                },
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://hazira.vercel.app/news?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
         />
       </head>
       <body style={{ fontFamily: "'Heebo', sans-serif" }}>

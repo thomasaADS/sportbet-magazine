@@ -3,10 +3,25 @@ import { bettingAgents } from "@/lib/agents-data";
 import AgentContactForm from "@/components/AgentContactForm";
 
 export const metadata: Metadata = {
-  title: "מדריך סוכנים מורשים | הזירה - סקירות ומידע",
+  title: "מדריך סוכנים מורשים וממולצים | הזירה - סקירות ומידע",
   description:
-    "מדריך מקיף של סוכני הימורי ספורט - סקירות, דירוגים, סטטוס רישוי ומידע. Winner, Bet365, Pinnacle, Stake ועוד. מידע בלבד, לא הימורים.",
-  keywords: ["סוכני הימורים", "מדריך סוכנים", "winner", "bet365", "סקירות"],
+    "מדריך מקיף של סוכני הימורי ספורט - סוכנים ממולצים עם קשר ישיר בוואטסאפ, סקירות, דירוגים, סטטוס רישוי ומידע. Winner, Bet365, Pinnacle, Stake ועוד.",
+  keywords: [
+    "סוכני הימורים",
+    "מדריך סוכנים",
+    "סוכן הימורים ממולץ",
+    "סוכן ספורט",
+    "winner",
+    "bet365",
+    "סקירות",
+    "הימורי ספורט ישראל",
+  ],
+  openGraph: {
+    title: "מדריך סוכנים מורשים וממולצים | הזירה",
+    description: "סוכנים ממולצים עם קשר ישיר בוואטסאפ + מדריך מקיף של פלטפורמות הימורי ספורט",
+    type: "website",
+    locale: "he_IL",
+  },
 };
 
 export default function AgentsPage() {

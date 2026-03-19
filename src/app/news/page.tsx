@@ -3,8 +3,14 @@ import Link from "next/link";
 import { newsArticles, newsCategories } from "@/lib/news-data";
 
 export const metadata: Metadata = {
-  title: "חדשות הימורי ספורט | הזירה - עדכונים שוטפים",
+  title: "חדשות הימורי ספורט - עדכונים שוטפים",
   description: "חדשות הימורי ספורט מישראל ומהעולם. כדורגל, כדורסל, טניס, פוקר, MMA ועוד. ניתוחים, תחזיות וסקירות.",
+  openGraph: {
+    title: "חדשות הימורי ספורט | הזירה",
+    description: "חדשות הימורי ספורט מישראל ומהעולם - ניתוחים, תחזיות וסקירות",
+    type: "website",
+    locale: "he_IL",
+  },
 };
 
 export default function NewsPage() {

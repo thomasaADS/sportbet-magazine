@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "קהילת הזירה | הצטרפו לקהילת הימורי הספורט",
+  title: "קהילת הזירה - הצטרפו לקהילת הימורי הספורט",
   description: "הצטרפו לקהילת הזירה - דיונים, ניתוחים, טיפים וחדשות מעולם הימורי הספורט. טלגרם, וואטסאפ וניוזלטר.",
+  openGraph: {
+    title: "קהילת הזירה | הצטרפו עכשיו",
+    description: "דיונים, ניתוחים, טיפים וחדשות מעולם הימורי הספורט",
+    type: "website",
+    locale: "he_IL",
+  },
 };
 
 const discussions = [

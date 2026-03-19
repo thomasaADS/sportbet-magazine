@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import OddsBoard from "@/components/OddsBoard";
 
 export const metadata: Metadata = {
-  title: "אודס הימורי ספורט | הזירה - השוואת אודס",
+  title: "אודס הימורי ספורט - השוואת אודס",
   description: "השוואת אודס מסוכנים מובילים. מצאו את האודס הטובים ביותר לכדורגל, כדורסל, טניס ועוד.",
+  openGraph: {
+    title: "השוואת אודס הימורי ספורט | הזירה",
+    description: "השוואת אודס מסוכנים מובילים - כדורגל, כדורסל, טניס ועוד",
+    type: "website",
+    locale: "he_IL",
+  },
 };
 
 export default function OddsPage() {
