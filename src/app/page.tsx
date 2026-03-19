@@ -255,35 +255,44 @@ export default function HomePage() {
             </div>
 
             {/* Recommended Personal Agents */}
-            <div className="mb-6 p-4 bg-gradient-to-r from-[#1a1a2e] via-[#16213e] to-[#0f3460] rounded-sm text-white">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="flex items-center gap-1.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-full border border-emerald-500/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  סוכנים ממולצים
-                </span>
+            <div className="mb-6 border border-border rounded-sm overflow-hidden">
+              <div className="bg-bg-section px-4 py-2.5 border-b border-border flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="section-title text-xs">סוכנים ממולצים</span>
+                  <span className="flex items-center gap-1 text-[10px] text-emerald-600 font-semibold">
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+                    </span>
+                    זמינים עכשיו
+                  </span>
+                </div>
+                <Link href="/agents#recommended-agents" className="text-[10px] font-bold text-red hover:underline">
+                  לכל הסוכנים ←
+                </Link>
               </div>
-              <div className="space-y-2">
+              <div className="divide-y divide-border">
                 {[
-                  { name: "דודו הסוכן", letter: "ד", phone: "052-359-3540", wa: "972523593540", gradient: "from-amber-400 to-amber-600" },
-                  { name: "סול הסוכן", letter: "ס", phone: "052-421-4123", wa: "972524214123", gradient: "from-blue-400 to-blue-600" },
-                  { name: "מיכאל הסוכן", letter: "מ", phone: "053-480-8349", wa: "972534808349", gradient: "from-purple-400 to-purple-600" },
+                  { name: "דודו הסוכן", letter: "ד", phone: "052-359-3540", wa: "972523593540", desc: "סוכן מנוסה ואמין", color: "bg-amber-500 text-white" },
+                  { name: "סול הסוכן", letter: "ס", phone: "052-421-4123", wa: "972524214123", desc: "מקצועי עם מוניטין מוכח", color: "bg-blue-500 text-white" },
+                  { name: "מיכאל הסוכן", letter: "מ", phone: "053-480-8349", wa: "972534808349", desc: "מומחה עם ידע מעמיק", color: "bg-purple-500 text-white" },
                 ].map((agent) => (
                   <a
                     key={agent.wa}
                     href={`https://wa.me/${agent.wa}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-2.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors group"
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-bg-warm transition-colors group"
                   >
-                    <div className={`w-9 h-9 rounded-full bg-gradient-to-br ${agent.gradient} flex items-center justify-center text-sm font-black text-white flex-shrink-0`}>
+                    <div className={`w-10 h-10 rounded-full ${agent.color} flex items-center justify-center text-sm font-black flex-shrink-0`}>
                       {agent.letter}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-sm font-bold">{agent.name}</div>
-                      <div className="text-[10px] text-white/50">{agent.phone}</div>
+                      <div className="text-[10px] text-ink-muted">{agent.desc} • {agent.phone}</div>
                     </div>
                     <div
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-white text-[11px] font-bold flex-shrink-0 group-hover:scale-105 transition-transform"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-white text-[11px] font-bold flex-shrink-0 group-hover:opacity-90 transition-opacity"
                       style={{ background: "#25D366" }}
                     >
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
