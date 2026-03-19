@@ -273,9 +273,9 @@ export default function HomePage() {
               </div>
               <div className="divide-y divide-border">
                 {[
-                  { name: "דודו הסוכן", letter: "ד", phone: "052-359-3540", wa: "972523593540", desc: "סוכן מנוסה ואמין", color: "bg-amber-500 text-white" },
-                  { name: "סול הסוכן", letter: "ס", phone: "052-421-4123", wa: "972524214123", desc: "מקצועי עם מוניטין מוכח", color: "bg-blue-500 text-white" },
-                  { name: "מיכאל הסוכן", letter: "מ", phone: "053-480-8349", wa: "972534808349", desc: "מומחה עם ידע מעמיק", color: "bg-purple-500 text-white" },
+                  { name: "דודו הסוכן", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face", phone: "052-359-3540", wa: "972523593540", desc: "סוכן מנוסה ואמין" },
+                  { name: "סול הסוכן", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face", phone: "052-421-4123", wa: "972524214123", desc: "מקצועי עם מוניטין מוכח" },
+                  { name: "מיכאל הסוכן", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face", phone: "053-480-8349", wa: "972534808349", desc: "מומחה עם ידע מעמיק" },
                 ].map((agent) => (
                   <a
                     key={agent.wa}
@@ -284,9 +284,11 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-4 py-3 hover:bg-bg-warm transition-colors group"
                   >
-                    <div className={`w-10 h-10 rounded-full ${agent.color} flex items-center justify-center text-sm font-black flex-shrink-0`}>
-                      {agent.letter}
-                    </div>
+                    <img
+                      src={agent.avatar}
+                      alt={agent.name}
+                      className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                    />
                     <div className="flex-1 min-w-0">
                       <div className="text-sm font-bold">{agent.name}</div>
                       <div className="text-[10px] text-ink-muted">{agent.desc} • {agent.phone}</div>

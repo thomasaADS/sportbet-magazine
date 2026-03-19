@@ -65,9 +65,11 @@ export default function AgentsPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* דודו הסוכן */}
           <div className="bg-bg-paper border border-border rounded-sm p-6 text-center">
-            <div className="w-20 h-20 rounded-full bg-bg-section border-2 border-gold flex items-center justify-center mx-auto mb-4">
-              <span className="text-3xl font-black text-gold">ד</span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+              alt="דודו הסוכן"
+              className="w-20 h-20 rounded-full object-cover border-2 border-gold mx-auto mb-4"
+            />
             <h3 className="headline-primary mb-1">דודו הסוכן</h3>
             <p className="text-xs text-ink-muted mb-1">052-359-3540</p>
             <p className="text-xs text-ink-light mb-4">סוכן מנוסה ואמין עם שנות ניסיון בתחום</p>
@@ -87,9 +89,11 @@ export default function AgentsPage() {
 
           {/* סול הסוכן */}
           <div className="bg-bg-paper border border-border rounded-sm p-6 text-center">
-            <div className="w-20 h-20 rounded-full bg-bg-section border-2 border-gold flex items-center justify-center mx-auto mb-4">
-              <span className="text-3xl font-black text-gold">ס</span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+              alt="סול הסוכן"
+              className="w-20 h-20 rounded-full object-cover border-2 border-gold mx-auto mb-4"
+            />
             <h3 className="headline-primary mb-1">סול הסוכן</h3>
             <p className="text-xs text-ink-muted mb-1">052-421-4123</p>
             <p className="text-xs text-ink-light mb-4">סוכן מקצועי עם מוניטין מוכח בשוק</p>
@@ -109,9 +113,11 @@ export default function AgentsPage() {
 
           {/* מיכאל הסוכן */}
           <div className="bg-bg-paper border border-border rounded-sm p-6 text-center">
-            <div className="w-20 h-20 rounded-full bg-bg-section border-2 border-gold flex items-center justify-center mx-auto mb-4">
-              <span className="text-3xl font-black text-gold">מ</span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
+              alt="מיכאל הסוכן"
+              className="w-20 h-20 rounded-full object-cover border-2 border-gold mx-auto mb-4"
+            />
             <h3 className="headline-primary mb-1">מיכאל הסוכן</h3>
             <p className="text-xs text-ink-muted mb-1">053-480-8349</p>
             <p className="text-xs text-ink-light mb-4">סוכן מומחה עם ידע מעמיק בספורט</p>

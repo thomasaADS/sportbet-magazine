@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 
 const agents = [
-  { name: "דודו", letter: "ד", phone: "052-359-3540", wa: "972523593540", color: "bg-amber-500" },
-  { name: "סול", letter: "ס", phone: "052-421-4123", wa: "972524214123", color: "bg-blue-500" },
-  { name: "מיכאל", letter: "מ", phone: "053-480-8349", wa: "972534808349", color: "bg-purple-500" },
+  { name: "דודו", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face", phone: "052-359-3540", wa: "972523593540" },
+  { name: "סול", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face", phone: "052-421-4123", wa: "972524214123" },
+  { name: "מיכאל", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face", phone: "053-480-8349", wa: "972534808349" },
 ];
 
 export default function FloatingAgentsBanner() {
@@ -81,9 +81,11 @@ export default function FloatingAgentsBanner() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-1.5 p-2.5 rounded-lg border border-gray-100 hover:border-emerald-200 hover:bg-emerald-50/50 transition-all group cursor-pointer"
               >
-                <div className={`w-10 h-10 rounded-full ${agent.color} flex items-center justify-center text-sm font-black text-white group-hover:scale-110 transition-transform`}>
-                  {agent.letter}
-                </div>
+                <img
+                  src={agent.avatar}
+                  alt={agent.name}
+                  className="w-10 h-10 rounded-full object-cover group-hover:scale-110 transition-transform"
+                />
                 <span className="text-xs font-bold text-gray-800">{agent.name}</span>
                 <span className="text-[9px] text-gray-400">{agent.phone}</span>
                 <span

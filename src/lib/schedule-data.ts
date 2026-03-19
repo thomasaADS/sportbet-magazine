@@ -25,12 +25,12 @@ export const weeklySchedule: ScheduleEvent[] = [
 ];
 
 export const videoHighlights = [
-  { id: 1, title: "תקציר: מכבי ת\"א - הפועל ב\"ש 3-0", duration: "4:32", category: "ליגת העל", views: "12.4K", thumbnail: "https://images.unsplash.com/photo-1556056504-5c7696c4c28d?w=600&q=80" },
-  { id: 2, title: "כל השערים: ריאל מדריד - באיירן מינכן", duration: "6:15", category: "ליגת האלופות", views: "45.2K", thumbnail: "https://images.unsplash.com/photo-1504450758481-7338bbe75005?w=600&q=80" },
-  { id: 3, title: "הייליטס NBA: לייקרס vs סלטיקס", duration: "8:44", category: "NBA", views: "23.1K", thumbnail: "https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=600&q=80" },
-  { id: 4, title: "ניתוח טקטי: ארסנל של ארטטה", duration: "12:20", category: "ניתוח", views: "8.7K", thumbnail: "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=600&q=80" },
-  { id: 5, title: "UFC 320: קדימון מלא + ניתוח קרבות", duration: "15:03", category: "MMA", views: "18.9K", thumbnail: "https://images.unsplash.com/photo-1552667466-07770ae110d0?w=600&q=80" },
-  { id: 6, title: "שער העונה? מבט מקרוב על שער לאמין יאמאל", duration: "2:15", category: "כדורגל", views: "67.3K", thumbnail: "https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=600&q=80" },
+  { id: 1, title: "תקציר: מכבי ת\"א - הפועל ב\"ש 3-0", duration: "4:32", category: "ליגת העל", views: "12.4K", videoId: "hMQ2qGmJOVM", thumbnail: "https://img.youtube.com/vi/hMQ2qGmJOVM/hqdefault.jpg" },
+  { id: 2, title: "כל השערים: ריאל מדריד - באיירן מינכן", duration: "6:15", category: "ליגת האלופות", views: "45.2K", videoId: "aDgMnJV_bNs", thumbnail: "https://img.youtube.com/vi/aDgMnJV_bNs/hqdefault.jpg" },
+  { id: 3, title: "הייליטס NBA: לייקרס vs סלטיקס", duration: "8:44", category: "NBA", views: "23.1K", videoId: "SUelaz0BQSA", thumbnail: "https://img.youtube.com/vi/SUelaz0BQSA/hqdefault.jpg" },
+  { id: 4, title: "ניתוח טקטי: ארסנל של ארטטה", duration: "12:20", category: "ניתוח", views: "8.7K", videoId: "4L-CVttJnks", thumbnail: "https://img.youtube.com/vi/4L-CVttJnks/hqdefault.jpg" },
+  { id: 5, title: "UFC 320: קדימון מלא + ניתוח קרבות", duration: "15:03", category: "MMA", views: "18.9K", videoId: "N3LFNlBJTzA", thumbnail: "https://img.youtube.com/vi/N3LFNlBJTzA/hqdefault.jpg" },
+  { id: 6, title: "שער העונה? מבט מקרוב על שער לאמין יאמאל", duration: "2:15", category: "כדורגל", views: "67.3K", videoId: "2aMKqGSB3X0", thumbnail: "https://img.youtube.com/vi/2aMKqGSB3X0/hqdefault.jpg" },
 ];
 
 export const trendingTopics = [
