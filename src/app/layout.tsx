@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BreakingBar from "@/components/BreakingBar";
+import FloatingAgentsBanner from "@/components/FloatingAgentsBanner";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hazira.vercel.app"),
@@ -97,6 +98,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <FloatingAgentsBanner />
       </body>
     </html>
   );

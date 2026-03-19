@@ -222,6 +222,23 @@ body {
   border: 1px solid #ce93d8;
 }
 
+/* --- FLOATING BANNER ANIMATIONS --- */
+@keyframes slide-up {
+  0% { opacity: 0; transform: translate(-50%, 30px); }
+  100% { opacity: 1; transform: translate(-50%, 0); }
+}
+.animate-slide-up {
+  animation: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
 /* Scroll smoothness */
 html { scroll-behavior: smooth; }
 

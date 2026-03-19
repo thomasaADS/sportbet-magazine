@@ -54,7 +54,7 @@ export default function AgentsPage() {
       </div>
 
       {/* === RECOMMENDED PERSONAL AGENTS === */}
-      <section className="mb-12">
+      <section id="recommended-agents" className="mb-12">
         <div className="flex items-center gap-4 mb-6">
           <span className="section-flag" style={{ background: "#d4a017" }}>סוכנים ממולצים</span>
           <hr className="rule-thin flex-1" />
