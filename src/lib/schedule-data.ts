@@ -25,12 +25,12 @@ export const weeklySchedule: ScheduleEvent[] = [
 ];
 
 export const videoHighlights = [
-  { id: 1, title: "תקציר: מכבי ת\"א - הפועל ב\"ש 3-0", duration: "4:32", category: "ליגת העל", views: "12.4K", videoId: "hMQ2qGmJOVM", thumbnail: "https://img.youtube.com/vi/hMQ2qGmJOVM/hqdefault.jpg" },
-  { id: 2, title: "כל השערים: ריאל מדריד - באיירן מינכן", duration: "6:15", category: "ליגת האלופות", views: "45.2K", videoId: "aDgMnJV_bNs", thumbnail: "https://img.youtube.com/vi/aDgMnJV_bNs/hqdefault.jpg" },
-  { id: 3, title: "הייליטס NBA: לייקרס vs סלטיקס", duration: "8:44", category: "NBA", views: "23.1K", videoId: "SUelaz0BQSA", thumbnail: "https://img.youtube.com/vi/SUelaz0BQSA/hqdefault.jpg" },
-  { id: 4, title: "ניתוח טקטי: ארסנל של ארטטה", duration: "12:20", category: "ניתוח", views: "8.7K", videoId: "4L-CVttJnks", thumbnail: "https://img.youtube.com/vi/4L-CVttJnks/hqdefault.jpg" },
-  { id: 5, title: "UFC 320: קדימון מלא + ניתוח קרבות", duration: "15:03", category: "MMA", views: "18.9K", videoId: "N3LFNlBJTzA", thumbnail: "https://img.youtube.com/vi/N3LFNlBJTzA/hqdefault.jpg" },
-  { id: 6, title: "שער העונה? מבט מקרוב על שער לאמין יאמאל", duration: "2:15", category: "כדורגל", views: "67.3K", videoId: "2aMKqGSB3X0", thumbnail: "https://img.youtube.com/vi/2aMKqGSB3X0/hqdefault.jpg" },
+  { id: 1, title: "Top 10 משחקי NBA - 18 מרץ 2026", duration: "10:02", category: "NBA", views: "89.4K", videoId: "2ZoslDRitmI", thumbnail: "https://img.youtube.com/vi/2ZoslDRitmI/hqdefault.jpg" },
+  { id: 2, title: "סיכום לילה NBA - 18 מרץ 2026", duration: "9:55", category: "NBA", views: "45.2K", videoId: "qck4xH0MlgM", thumbnail: "https://img.youtube.com/vi/qck4xH0MlgM/hqdefault.jpg" },
+  { id: 3, title: "לוקה דונצ'יץ' לא מפסיק! רצף ניצחונות ללייקרס", duration: "8:44", category: "NBA", views: "123.1K", videoId: "IGQipV7gI9w", thumbnail: "https://img.youtube.com/vi/IGQipV7gI9w/hqdefault.jpg" },
+  { id: 4, title: "הדאנקים הכי חזקים של עונת 2025/26 NBA", duration: "12:20", category: "NBA", views: "67.8K", videoId: "rkpYht67__s", thumbnail: "https://img.youtube.com/vi/rkpYht67__s/hqdefault.jpg" },
+  { id: 5, title: "שערים מטורפים בפרמייר ליג - שחקני מרוקו", duration: "6:15", category: "כדורגל", views: "38.9K", videoId: "s1hGtcm1FDg", thumbnail: "https://img.youtube.com/vi/s1hGtcm1FDg/hqdefault.jpg" },
+  { id: 6, title: "5 רמות, 5 שערים - כמה הייתם קולעים?", duration: "4:32", category: "כדורגל", views: "52.3K", videoId: "rcsyu4CKWRk", thumbnail: "https://img.youtube.com/vi/rcsyu4CKWRk/hqdefault.jpg" },
 ];
 
 export const trendingTopics = [
