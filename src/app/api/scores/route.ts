@@ -21,8 +21,10 @@ export async function GET() {
   }
 
   try {
+    // Fetch today's fixtures (live + scheduled + finished)
+    const today = new Date().toISOString().split("T")[0];
     const res = await fetch(
-      `https://${API_FOOTBALL_HOST}/fixtures?live=all`,
+      `https://${API_FOOTBALL_HOST}/fixtures?date=${today}`,
       {
         headers: {
           "x-rapidapi-key": API_FOOTBALL_KEY,
@@ -40,6 +42,7 @@ export async function GET() {
       fixture: {
         id: number;
         status: { short: string; elapsed: number | null };
+        date: string;
       };
       teams: {
         home: { name: string };
@@ -52,23 +55,33 @@ export async function GET() {
       league: { name: string };
     }
 
-    const matches = data.response?.map((fixture: FixtureResponse) => ({
-      id: fixture.fixture.id,
-      homeTeam: fixture.teams.home.name,
-      awayTeam: fixture.teams.away.name,
-      homeScore: fixture.goals.home ?? 0,
-      awayScore: fixture.goals.away ?? 0,
-      minute: fixture.fixture.status.elapsed
-        ? `${fixture.fixture.status.elapsed}'`
-        : fixture.fixture.status.short,
-      league: fixture.league.name,
-      status:
-        fixture.fixture.status.short === "FT"
-          ? "finished"
-          : fixture.fixture.status.short === "NS"
-          ? "upcoming"
-          : "live",
-    }));
+    const liveStatuses = ["1H", "HT", "2H", "ET", "P", "BT", "LIVE"];
+
+    const matches = data.response?.map((fixture: FixtureResponse) => {
+      const shortStatus = fixture.fixture.status.short;
+      const status = shortStatus === "FT" || shortStatus === "AET" || shortStatus === "PEN"
+        ? "finished"
+        : shortStatus === "NS" || shortStatus === "TBD"
+        ? "upcoming"
+        : liveStatuses.includes(shortStatus)
+        ? "live"
+        : "finished";
+
+      return {
+        id: fixture.fixture.id,
+        homeTeam: fixture.teams.home.name,
+        awayTeam: fixture.teams.away.name,
+        homeScore: fixture.goals.home ?? 0,
+        awayScore: fixture.goals.away ?? 0,
+        minute: fixture.fixture.status.elapsed
+          ? `${fixture.fixture.status.elapsed}'`
+          : status === "upcoming"
+          ? new Date(fixture.fixture.date).toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit" })
+          : shortStatus,
+        league: fixture.league.name,
+        status,
+      };
+    }) || [];
 
     return NextResponse.json({ source: "api-football", matches });
   } catch {

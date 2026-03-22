@@ -5,28 +5,20 @@ import { NextResponse } from "next/server";
 // Sign up to get your API key
 const ODDS_API_KEY = process.env.ODDS_API_KEY || "";
 
+// Multiple sports for broader coverage
+const SPORT_KEYS = [
+  { key: "soccer_epl", sport: "כדורגל", league: "פרמייר ליג" },
+  { key: "soccer_spain_la_liga", sport: "כדורגל", league: "לה ליגה" },
+  { key: "soccer_uefa_champs_league", sport: "כדורגל", league: "ליגת האלופות" },
+  { key: "basketball_nba", sport: "כדורסל", league: "NBA" },
+];
+
 export async function GET() {
   if (!ODDS_API_KEY) {
-    return NextResponse.json({
-      source: "demo",
-      odds: [
-        { id: 1, homeTeam: "ריאל מדריד", awayTeam: "באיירן מינכן", league: "UCL", homeOdds: 2.10, drawOdds: 3.40, awayOdds: 3.20, time: "21:45" },
-        { id: 2, homeTeam: "ארסנל", awayTeam: "מנצ'סטר סיטי", league: "EPL", homeOdds: 2.50, drawOdds: 3.30, awayOdds: 2.70, time: "20:45" },
-        { id: 3, homeTeam: "לייקרס", awayTeam: "סלטיקס", league: "NBA", homeOdds: 1.85, drawOdds: 0, awayOdds: 1.95, time: "03:00" },
-      ],
-    });
+    return NextResponse.json({ source: "demo", events: [] });
   }
 
   try {
-    const res = await fetch(
-      `https://api.the-odds-api.com/v4/sports/soccer_epl/odds/?apiKey=${ODDS_API_KEY}&regions=eu&markets=h2h&oddsFormat=decimal`,
-      { next: { revalidate: 300 } }
-    );
-
-    if (!res.ok) throw new Error("Odds API request failed");
-
-    const data = await res.json();
-
     interface OddsBookmaker {
       key: string;
       title: string;
@@ -36,7 +28,7 @@ export async function GET() {
       }[];
     }
 
-    interface OddsEvent {
+    interface OddsApiEvent {
       id: string;
       home_team: string;
       away_team: string;
@@ -45,35 +37,56 @@ export async function GET() {
       bookmakers: OddsBookmaker[];
     }
 
-    const odds = data.map((event: OddsEvent) => {
-      const bookmaker = event.bookmakers?.[0];
-      const market = bookmaker?.markets?.find(
-        (m: OddsBookmaker["markets"][0]) => m.key === "h2h"
-      );
-      const outcomes = market?.outcomes || [];
+    const allEvents = [];
 
-      return {
-        id: event.id,
-        homeTeam: event.home_team,
-        awayTeam: event.away_team,
-        league: event.sport_title,
-        homeOdds:
-          outcomes.find((o: { name: string }) => o.name === event.home_team)
-            ?.price || 0,
-        drawOdds:
-          outcomes.find((o: { name: string }) => o.name === "Draw")?.price || 0,
-        awayOdds:
-          outcomes.find((o: { name: string }) => o.name === event.away_team)
-            ?.price || 0,
-        time: new Date(event.commence_time).toLocaleTimeString("he-IL", {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
-      };
-    });
+    for (const sportCfg of SPORT_KEYS) {
+      try {
+        const res = await fetch(
+          `https://api.the-odds-api.com/v4/sports/${sportCfg.key}/odds/?apiKey=${ODDS_API_KEY}&regions=eu&markets=h2h&oddsFormat=decimal`,
+          { next: { revalidate: 300 } }
+        );
+        if (!res.ok) continue;
 
-    return NextResponse.json({ source: "the-odds-api", odds });
+        const data: OddsApiEvent[] = await res.json();
+
+        for (const event of data) {
+          const bookmakers = event.bookmakers
+            .map((bm) => {
+              const market = bm.markets.find((m) => m.key === "h2h");
+              if (!market) return null;
+              const outcomes = market.outcomes;
+              return {
+                name: bm.title,
+                homeOdds: outcomes.find((o) => o.name === event.home_team)?.price || 0,
+                drawOdds: outcomes.find((o) => o.name === "Draw")?.price || 0,
+                awayOdds: outcomes.find((o) => o.name === event.away_team)?.price || 0,
+              };
+            })
+            .filter((bm): bm is NonNullable<typeof bm> => bm !== null)
+            .slice(0, 5);
+
+          if (bookmakers.length === 0) continue;
+
+          allEvents.push({
+            id: event.id,
+            homeTeam: event.home_team,
+            awayTeam: event.away_team,
+            league: sportCfg.league,
+            sport: sportCfg.sport,
+            time: new Date(event.commence_time).toLocaleTimeString("he-IL", {
+              hour: "2-digit",
+              minute: "2-digit",
+            }),
+            bookmakers,
+          });
+        }
+      } catch {
+        // Skip failed sport, continue with others
+      }
+    }
+
+    return NextResponse.json({ source: "the-odds-api", events: allEvents });
   } catch {
-    return NextResponse.json({ source: "demo", odds: [] });
+    return NextResponse.json({ source: "demo", events: [] });
   }
 }

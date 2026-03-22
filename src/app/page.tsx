@@ -2,6 +2,7 @@ import Link from "next/link";
 import { newsArticles } from "@/lib/news-data";
 import { bettingAgents } from "@/lib/agents-data";
 import LiveScoresWidget from "@/components/LiveScoresWidget";
+import LiveNewsWidget from "@/components/LiveNewsWidget";
 import StandingsTable from "@/components/StandingsTable";
 import ScheduleWidget from "@/components/ScheduleWidget";
 import PollWidget from "@/components/PollWidget";
@@ -108,6 +109,13 @@ export default function HomePage() {
       </section>
 
       <hr className="rule-thick my-1" />
+
+      {/* ============ LIVE NEWS FROM RSS ============ */}
+      <section className="py-6">
+        <LiveNewsWidget />
+      </section>
+
+      <hr className="rule-thin my-1" />
 
       {/* ============ SECTION 3: ISRAELI FOOTBALL ============ */}
       <section className="py-6">
